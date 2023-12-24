@@ -1,5 +1,5 @@
 --
-CREATE DATABASE database_01_tenhocvien;
+CREATE DATABASE database_01_hongha;
 --
 CREATE TABLE courses (
   id SERIAL PRIMARY KEY,
