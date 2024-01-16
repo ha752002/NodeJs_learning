@@ -1,0 +1,39 @@
+<h1>Chi tiết email đã gửi</h1>
+<table border="1" class="table-mail-detail">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Tiêu đề</th>
+      <th>Trạng thái</th>
+      <th>Thời gian gửi</th>
+      <th>Chi tiết</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let i = 0; i < mails.length; i++) { %>
+    <tr>
+      <td style="padding: 0 10px"><%= mails[i].to %></td>
+      <td style="padding: 0 10px"><%= mails[i].subject %></td>
+      <td style="padding: 0 10px">
+        <%= mails[i].status ? 'Đã xem' : 'Chưa xem' %>
+      </td>
+      <td style="padding: 0 10px">
+        <%= moment(mails[i].created_at).format('DD/MM/YYYY HH:mm:ss') %>
+      </td>
+      <td>
+        <a
+          href="/mail/detail/<%= mails[i].id %>"
+          style="
+            display: inline-block;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            background-color: rgb(8, 145, 8);
+          "
+          >Chi tiết</a
+        >
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>

@@ -1,0 +1,5 @@
+<h1><%= mail.subject %></h1>
+<p><%= moment(mail.created_at).format('DD/MM/YYYY HH:mm:ss') %></p>
+<i><%= mail.from %> đến <br /><%= mail.to %></i>
+<p style="margin-top: 20px; font-weight: bold">Nội dung</p>
+<p><%= mail.content %></p>
