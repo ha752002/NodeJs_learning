@@ -26,6 +26,8 @@ module.exports = {
     dialectOptions: {
       ssl: {
         require: true
+
+
       },
     },
     dialectModule: pg
