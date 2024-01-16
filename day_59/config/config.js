@@ -25,8 +25,7 @@ module.exports = {
     port: process.env.DB_PORT || 5432,
     dialectOptions: {
       ssl: {
-        require: true,
-        rejectUnauthorized: false
+        require: true
       },
     },
     dialectModule: pg
