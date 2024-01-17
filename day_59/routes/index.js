@@ -2,7 +2,6 @@ var express = require('express')
 const mailController = require('../controllers/mail.controller')
 var router = express.Router()
 const models = require('../models/index')
-const {join} = require("path");
 const Mail = models.Mail
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -16,7 +15,7 @@ router.get('/mailTracker/:id', async function (req, res, next) {
     mail.status = true
     await mail.save()
   }
-  res.sendFile('trackingImage.png', { root: join(process.cwd(), 'public/images') })
+  res.sendFile('trackingImage.png', { root: '../../public/images' })
   // next()
   // res.send(mail)
 })
