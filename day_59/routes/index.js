@@ -15,8 +15,8 @@ router.get('/images/:id', async function (req, res, next) {
     mail.status = true
     await mail.save()
   }
-  // res.sendFile('trackingImage.png', { root: './public/images' })
-  next()
+  res.sendFile('trackingImage.png', { root: './public/images' })
+  // next()
 })
 
 module.exports = router
