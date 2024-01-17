@@ -15,7 +15,7 @@ router.get('/mailTracker/:id', async function (req, res, next) {
     mail.status = true
     await mail.save()
   }
-  res.sendFile('trackingImage.png', { root: './public/images' })
+  res.sendFile('trackingImage.png', { root: '../public/images' })
   // next()
   // res.send(mail)
 })
