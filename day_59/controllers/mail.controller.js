@@ -15,7 +15,8 @@ module.exports = {
         to: email,
         subject: subject,
         content: content,
-        status: false
+        status: false,
+        created_at: new Date()
       })
       const id = mail.dataValues.id
       const info = await sendMail(email, subject, content, id)
