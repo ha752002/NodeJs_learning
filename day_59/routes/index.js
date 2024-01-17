@@ -8,14 +8,15 @@ router.get('/', function (req, res, next) {
   console.log(req)
   res.render('index', { title: 'Express' })
 })
-router.get('/images', async function (req, res, next) {
-  const { id } = req.query
+router.get('/images/:id', async function (req, res, next) {
+  const { id } = req.params
   const mail = await Mail.findByPk(id)
   if (mail) {
     mail.status = true
     await mail.save()
   }
-  res.sendFile('trackingImage.png', { root: './public/images' })
+  // res.sendFile('trackingImage.png', { root: './public/images' })
+  next()
 })
 
 module.exports = router

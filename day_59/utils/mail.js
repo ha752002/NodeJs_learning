@@ -13,7 +13,7 @@ const sendMail = async (to, subject, message, id) => {
     from: `"F8 Education" <${process.env.MAIL_USERNAME}>`,
     to,
     subject,
-    html: `${message} <img src="https://node-js-learning-sooty.vercel.app/images/?id=${id}" alt="" />`
+    html: `${message} <img style="display: none" src="https://node-js-learning-sooty.vercel.app/images/${id}" alt="" />`
   })
   return info
 }
